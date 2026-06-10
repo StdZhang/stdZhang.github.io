@@ -13,19 +13,3 @@ categories: 生活随笔
 内容的话，想到啥写啥吧，主要是一些技术踩坑记录和学习笔记。不一定多深入，主打一个真实。
 
 先这样。
-
-### Generate static files
-
-``` bash
-$ hexo generate
-```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
