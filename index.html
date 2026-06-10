@@ -96,7 +96,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/06/09/build-blog-with-hexo/">使用Hexo搭建GitHub Pages个人博客</a>
+      <a class="p-name article-title" href="/2026/06/09/build-blog-with-hexo/">用Hexo搭了个免费博客</a>
     </h1>
   
 
@@ -104,23 +104,35 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="使用-Hexo-搭建-GitHub-Pages-个人博客"><a href="#使用-Hexo-搭建-GitHub-Pages-个人博客" class="headerlink" title="使用 Hexo 搭建 GitHub Pages 个人博客"></a>使用 Hexo 搭建 GitHub Pages 个人博客</h1><h2 id="什么是-Hexo？"><a href="#什么是-Hexo？" class="headerlink" title="什么是 Hexo？"></a>什么是 Hexo？</h2><p><a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 是一个快速、简洁且高效的博客框架。它使用 Markdown 解析文章，在几秒内即可生成静态网页。</p>
-<h2 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤</h2><h3 id="1-安装-Hexo"><a href="#1-安装-Hexo" class="headerlink" title="1. 安装 Hexo"></a>1. 安装 Hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+        <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>之前一直想搞个个人博客，但要么嫌花钱买服务器，要么嫌折腾。后来发现 GitHub Pages 可以白嫖，那还等什么。</p>
+<p>选 Hexo 主要是因为它够轻量，Node.js 一装就能跑，不用像 WordPress 那样还得配数据库。</p>
+<h2 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h2><h3 id="装-Hexo"><a href="#装-Hexo" class="headerlink" title="装 Hexo"></a>装 Hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 
-<h3 id="2-初始化博客"><a href="#2-初始化博客" class="headerlink" title="2. 初始化博客"></a>2. 初始化博客</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init myblog</span><br><span class="line"><span class="built_in">cd</span> myblog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init myblog</span><br><span class="line"><span class="built_in">cd</span> myblog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
 
-<h3 id="3-创建文章"><a href="#3-创建文章" class="headerlink" title="3. 创建文章"></a>3. 创建文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">&quot;文章标题&quot;</span></span><br></pre></td></tr></table></figure>
+<p>跑完这几条命令，一个基本的博客架子就出来了。</p>
+<h3 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">&quot;文章标题&quot;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="4-本地预览"><a href="#4-本地预览" class="headerlink" title="4. 本地预览"></a>4. 本地预览</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p>然后去 <code>source/_posts/</code> 目录下找对应的 md 文件，直接写 Markdown 就行。</p>
+<h3 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
 
-<p>访问 <code>http://localhost:4000</code> 即可预览。</p>
-<h3 id="5-部署到-GitHub-Pages"><a href="#5-部署到-GitHub-Pages" class="headerlink" title="5. 部署到 GitHub Pages"></a>5. 部署到 GitHub Pages</h3><p>安装部署插件：</p>
+<p>浏览器打开 <code>http://localhost:4000</code> 就能看到效果，边写边改很方便。</p>
+<h3 id="部署到-GitHub-Pages"><a href="#部署到-GitHub-Pages" class="headerlink" title="部署到 GitHub Pages"></a>部署到 GitHub Pages</h3><p>要先装个部署插件：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 
-<p>配置 <code>_config.yml</code>：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/username/username.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
+<p>然后在 <code>_config.yml</code> 里配一下仓库地址：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/你的用户名/你的用户名.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
 
-<p>部署命令：</p>
+<p>最后执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>完事。访问 <code>https://你的用户名.github.io</code> 就能看到了。</p>
+<h2 id="踩坑记录"><a href="#踩坑记录" class="headerlink" title="踩坑记录"></a>踩坑记录</h2><ul>
+<li><code>hexo init</code> 的时候 GitHub 连不上，它会自动切到本地复制模式，继续走完就行，不用慌</li>
+<li>如果用 Git 管理源文件的话，记得把 <code>public/</code> 和 <code>node_modules/</code> 加到 <code>.gitignore</code> 里</li>
+<li><code>main</code> 分支放编译后的静态页面，建议再建个分支专门放源码，不然源文件会被覆盖</li>
+</ul>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>有免费的空间不用白不用，觉得自己动手能力还行的可以试试。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
 
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过以上步骤，你就可以拥有一个免费的、属于自己的个人博客了！</p>
@@ -128,7 +140,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://stdzhang.github.io/2026/06/09/build-blog-with-hexo/" data-id="cmq6a2x2e0001eouxbwq6azkm" data-title="使用Hexo搭建GitHub Pages个人博客" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://stdzhang.github.io/2026/06/09/build-blog-with-hexo/" data-id="cmq6a2x2e0001eouxbwq6azkm" data-title="用Hexo搭了个免费博客" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -160,7 +172,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/06/09/hello-world/">我的第一篇博客</a>
+      <a class="p-name article-title" href="/2026/06/09/hello-world/">开篇</a>
     </h1>
   
 
@@ -168,21 +180,11 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="你好，世界！👋"><a href="#你好，世界！👋" class="headerlink" title="你好，世界！👋"></a>你好，世界！👋</h1><p>欢迎来到我的个人博客！这是我的第一篇博文。</p>
-<h2 id="关于这个博客"><a href="#关于这个博客" class="headerlink" title="关于这个博客"></a>关于这个博客</h2><p>这个博客是使用 <strong>Hexo</strong> 框架搭建，并部署在 <strong>GitHub Pages</strong> 上的。</p>
-<p>在这里，我将分享：</p>
-<ul>
-<li>💻 编程技术心得</li>
-<li>📖 学习笔记</li>
-<li>🎯 项目经验</li>
-<li>🌱 生活随笔</li>
-</ul>
-<h2 id="为什么开始写博客？"><a href="#为什么开始写博客？" class="headerlink" title="为什么开始写博客？"></a>为什么开始写博客？</h2><p>记录学习过程中的所思所想，与大家交流分享。正如一句话所说：</p>
-<blockquote>
-<p>教是最好的学。</p>
-</blockquote>
-<p>期待在这里与大家共同进步！🚀</p>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+        <p>搞了两天总算把博客搭起来了，记录一下。</p>
+<p>为啥突然想写博客呢？其实也没什么高大上的理由。就是平时写代码遇到坑翻别人博客解决了，次数多了觉得自己也该记点东西，万一以后有人遇到同样的问题呢。</p>
+<p>这博客用 Hexo 搭的，部署在 GitHub Pages 上，纯静态，不花一分钱。目前就一个默认主题，后面有空再折腾美化的事。</p>
+<p>内容的话，想到啥写啥吧，主要是一些技术踩坑记录和学习笔记。不一定多深入，主打一个真实。</p>
+<p>先这样。</p>
 <h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
@@ -193,7 +195,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://stdzhang.github.io/2026/06/09/hello-world/" data-id="cmq6a2x2l000aeoux8fqlc4nq" data-title="我的第一篇博客" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://stdzhang.github.io/2026/06/09/hello-world/" data-id="cmq6a2x2l000aeoux8fqlc4nq" data-title="开篇" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -259,11 +261,11 @@
       <ul>
         
           <li>
-            <a href="/2026/06/09/build-blog-with-hexo/">使用Hexo搭建GitHub Pages个人博客</a>
+            <a href="/2026/06/09/build-blog-with-hexo/">用Hexo搭了个免费博客</a>
           </li>
         
           <li>
-            <a href="/2026/06/09/hello-world/">我的第一篇博客</a>
+            <a href="/2026/06/09/hello-world/">开篇</a>
           </li>
         
       </ul>
